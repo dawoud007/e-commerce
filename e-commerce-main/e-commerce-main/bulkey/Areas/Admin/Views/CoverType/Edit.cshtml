@@ -1,0 +1,30 @@
+﻿@model CoverType
+
+
+<form method="post" asp-action="Edit">
+    <div class=" border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit CoverType</h2>
+        </div>
+        <hr />
+     
+        <div class="mb-2">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" />
+           
+            
+        </div>
+         
+          <div class="mb-2">
+    <button type="submit" class="btn btn-warning" style="width:150px">Update</button>
+        <a asp-controller="CoverType" asp-action="Index" class="btn btn-primary">back</a>
+            </div>
+    </div>
+    
+</form>
+@section Scripts{
+  @{
+        <partial name="_ValidationScriptsPartial" />
+  }
+}
+

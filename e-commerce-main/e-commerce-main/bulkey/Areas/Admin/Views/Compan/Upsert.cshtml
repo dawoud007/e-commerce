@@ -1,0 +1,80 @@
+﻿@model Compan
+<form method="post" asp-action="Upsert" enctype="multipart/form-data">
+     <input type="hidden" asp-for="Id"/>
+     
+
+    <div class="border P-3 mt-4">
+        <div class="row pb-3">
+           <h2 class="text-primary">@((Model.Id !=0)?"update":"create") company</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary=All></div>
+
+        <div class="row mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for ="Name" class="text-danger"></span> 
+        </div
+        
+        <div class="row mb-3">
+            <label asp-for="PhoneNumber"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for ="PhoneNumber" class="text-danger"></span> 
+        </div>
+        
+        
+        <div class="row mb-3">
+            <label asp-for="StreetAddress"></label>
+            <input asp-for="StreetAddress" class="form-control" />
+            <span asp-validation-for ="StreetAddress" class="text-danger"></span> 
+        </div>
+        
+        
+        <div class="row mb-3">
+            <label asp-for="City"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for ="City" class="text-danger"></span> 
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="State"></label>
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for ="State" class="text-danger"></span> 
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="PostalCode"></label>
+            <input asp-for="PostalCode" class="form-control" />
+            <span asp-validation-for ="PostalCode" class="text-danger"></span> 
+        </div>
+
+        
+
+
+        
+
+        
+    
+<div class="col-12">
+             @if (Model.Id != 0)
+            {
+                <button type="submit"  class="btn btn-warning" style="width:150px">Update</button>
+            }  
+            else
+            {
+                 <button type="submit"  class="btn btn-warning" style="width:150px">Create</button>
+            }
+            
+              <a asp-controller="Compan" asp-action="Index" class="btn btn-primary">back</a>
+            </div>
+  
+
+</form>
+
+
+    
+@section Scripts{
+  @{
+        <partial name="_ValidationScriptsPartial" />
+     }
+     }
